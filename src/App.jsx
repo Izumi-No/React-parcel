@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 
 const App = () => {
+  const [count,setCount] = useLocalStorage("count",0)
+
+ 
+
   return (
-    <div>
+    <>
+    
       <h1>
-        Hello World
+        {`${count}`}
       </h1>
-    </div>
+      <button onClick={()=>{setCount(count+1)}}>sla</button>
+      
+    </>
   );
 }
 
